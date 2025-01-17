@@ -46,6 +46,7 @@ class HomeFragment : Fragment() {
 
             homeViewModel.tourism.observe(viewLifecycleOwner) { tourism ->
                 if (tourism != null) {
+                        println("tourism: $tourism")
                     when (tourism) {
                         is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                         is Resource.Success -> {
