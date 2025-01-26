@@ -5,8 +5,9 @@ import com.dicoding.tourismapp.core.data.TourismRepository
 import com.dicoding.tourismapp.core.data.source.local.entity.TourismEntity
 import com.dicoding.tourismapp.core.domain.model.Tourism
 import com.dicoding.tourismapp.core.domain.usecase.TourismUseCase
+import javax.inject.Inject
 
-class DetailTourismViewModel(private val tourismRepository: TourismUseCase) : ViewModel() {
+class DetailTourismViewModel @Inject constructor(private val tourismRepository: TourismUseCase) : ViewModel() {
     fun setFavoriteTourism(tourism: Tourism, newStatus:Boolean) = tourismRepository.setFavoriteTourism(tourism, newStatus)
 }
 
